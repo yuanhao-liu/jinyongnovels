@@ -20,7 +20,7 @@ public class SecondStepMapper extends Mapper<LongWritable,Text,Text,IntWritable>
     //去重后：胡斐  商老太 平阿四 商宝震
     @Override
     protected void map(LongWritable key, Text value, Context context) throws IOException, InterruptedException {
-        String[] split = value.toString().split("\\t+");
+        String[] split = value.toString().split("\t");
         Set<String> nameset=new HashSet<>();
         for(String name:split){
             nameset.add(name);

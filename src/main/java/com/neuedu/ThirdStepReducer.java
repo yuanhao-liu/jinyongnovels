@@ -14,7 +14,7 @@ public class ThirdStepReducer extends Reducer<Text, Text, Text, Text> {
     @Override
     protected void reduce(Text key, Iterable<Text> values, Context context) throws IOException, InterruptedException {
         int sum=0;
-        String str="";
+        String str="0.1#";//初始权重
         Map<String,Double> map=new TreeMap<>();
         for(Text i:values){
             String[] split = i.toString().split(",");
@@ -28,6 +28,7 @@ public class ThirdStepReducer extends Reducer<Text, Text, Text, Text> {
             str+=entry.getKey()+":"+String.format("%.3f", entry.getValue())+";";
         }
         str=str.substring(0,str.length()-1);
+
         context.write(key,new Text(str));
     }
 }
