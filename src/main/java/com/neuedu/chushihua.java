@@ -14,7 +14,10 @@ public class chushihua {
         FileReader fileReader = new FileReader(file);
         BufferedReader bufferedReader = new BufferedReader(fileReader);
 
-        File file1 = new File("output13/part-r-00001");
+        File output14 = new File("output14");
+        boolean mkdir = output14.mkdir();
+
+        File file1 = new File("output14/part-r-00000");
         FileWriter fileWriter = new FileWriter(file1);
         BufferedWriter bufferedWriter = new BufferedWriter(fileWriter);
 
